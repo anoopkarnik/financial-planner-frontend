@@ -18,7 +18,7 @@ const Accounts = () => {
       refreshPage()
     }, []);
 
-const backend_url = 'http://localhost:3002';
+const backend_url = 'http://13.127.126.240:3002';
 
   const getAllBalances = async() =>{
     const res = await fetch(backend_url+'/getBalances')

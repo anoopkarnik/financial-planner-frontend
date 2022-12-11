@@ -37,7 +37,7 @@ const Transactions = () => {
       getMonth(currentMonthId);
     }, []);
 
-const backend_url = 'http://localhost:3002';
+const backend_url = 'http://13.127.126.240:3002';
 
   const getTotalIncome = async(start_time,end_time) =>{
       const res = await fetch(backend_url+'/totalincome?start_time='+start_time+'&end_time='+end_time)

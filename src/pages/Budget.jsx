@@ -40,7 +40,7 @@ const Budget = () => {
       getMonth(currentMonthId)
     }, []);
 
-const backend_url = 'http://localhost:3002';
+const backend_url = 'http://13.127.126.240:3002';
 
 const getMonth = async(id) =>{
   const res = await fetch(backend_url+'/month?id='+id)
