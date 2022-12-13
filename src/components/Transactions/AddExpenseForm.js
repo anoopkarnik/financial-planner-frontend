@@ -13,7 +13,7 @@ const AddExpenseForm = ({createExpense, updateBalance,currentMonthId,expenseType
 	const [subaccountTypes, setSubaccountTypes] = useState([]);
 	const [showAddExpensesDetails,setShowAddExpensesDetails] = useState(false);
 
-	const onSubmit = (event) => {
+	const onSubmit = () => {
         createExpense(name,cost,expenseType,currentMonthId,categoryType,subcategoryType,accountType,subaccountType);
 		updateBalance(cost,subaccountType);
 	};

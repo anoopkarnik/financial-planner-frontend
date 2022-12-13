@@ -29,7 +29,7 @@ const Budget = () => {
   const [delightTransaction, setDelightTransaction] = useState(false);
   const [growthTransaction, setGrowthTransaction] = useState(false);
   const [savingsTransaction, setSavingsTransaction] = useState(false);
-  const [currentMonthId, setCurrentMonthId] = useState("2");
+  const [currentMonthId] = useState("2");
   const [livingBudgets,setLivingBudgets] = useState([]);
   const [growthBudgets,setGrowthBudgets] = useState([]);
   const [delightBudgets,setDelightBudgets] = useState([]);

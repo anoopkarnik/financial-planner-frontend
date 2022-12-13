@@ -7,13 +7,13 @@ const Item = ({budget,backend_url, accountTypes}) => {
     const [showForm, setShowForm] = useState(false)
     const [name, setName] = useState(budget.name)
     const [cost, setCost] = useState(budget.cost)
-    const [expenseType,setExpenseType] = useState(budget.expense_type)
-    const [categoryType,setCategoryType] = useState(budget.category_type)
-    const [subcategoryType,setSubCategoryType] = useState(budget.sub_category_type)
+    const [expenseType] = useState(budget.expense_type)
+    const [categoryType] = useState(budget.category_type)
+    const [subcategoryType] = useState(budget.sub_category_type)
     const [accountType, setAccountType] = useState('')
     const [subaccountTypes,setSubaccountTypes] = useState([])
     const [subaccountType,setSubaccountType] = useState('')
-    const [id,setId] = useState(budget.id)
+    const [id] = useState(budget.id)
 
     const getSubAccountTypes = async(account_type) =>{
       const res = await fetch(backend_url+'/subaccountTypes?account_type='+account_type)

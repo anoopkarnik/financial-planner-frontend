@@ -21,7 +21,7 @@ const Transactions = () => {
   const [unplannedExpenses, setUnplannedExpenses] = useState([]);
   const [monthlyPlannedExpenses, setMonthlyPlannedExpenses] = useState([]);
   const [months, setMonths] = useState([]);
-  const [currentMonthId, setCurrentMonthId] = useState("2");
+  const [currentMonthId] = useState("2");
   const [expenseTypes, setExpenseTypes] = useState([]);
   const [currentExpenseTypes, setCurrentExpenseTypes] = useState(['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21']);
   const [currentAccountTypes, setCurrentAccountTypes] = useState(['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21']);

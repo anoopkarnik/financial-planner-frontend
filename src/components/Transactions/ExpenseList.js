@@ -1,7 +1,6 @@
 import React from 'react'
 import UnplannedExpenseItem from './UnplannedExpenseItem';
 import MonthlyPlannedExpenseItem from './MonthlyPlannedExpenseItem';
-import { useEffect,useState } from 'react';
 
 const ExpenseList = ({showPlannedExpanses,showUnplannedExpanses,monthlyPlannedExpenses,unplannedExpenses,getMonth,currentMonthId,backend_url,updateBalance}) => {
     

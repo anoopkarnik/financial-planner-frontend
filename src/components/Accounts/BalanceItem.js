@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BalanceItem = ({id,name,balance}) => {
+const BalanceItem = ({name,balance}) => {
   return (
     <li className='list-group-item d-flex justify-content-between align-items-center'>
     {name}
