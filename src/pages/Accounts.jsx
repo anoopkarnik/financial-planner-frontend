@@ -1,7 +1,6 @@
 import React from 'react';
 import { useEffect,useState } from 'react';
 import BalanceList from '../components/Accounts/BalanceList';
-import BalanceItem from '../components/Accounts/BalanceItem';
 import FreeLiquidityBalance from '../components/Accounts/FreeLiquidityBalance';
 import LiquidityBalance from '../components/Accounts/LiquidityBalance';
 import TotalBalance from '../components/Accounts/TotalBalance';

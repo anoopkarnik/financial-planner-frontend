@@ -9,7 +9,7 @@ import LivingTransaction from '../components/Budget/LivingTransaction';
 import SavingsTransaction from '../components/Budget/SavingsTransaction';
 import DelightTransaction from '../components/Budget/DelightTransaction';
 import GrowthTransaction from '../components/Budget/GrowthTransaction';
-import {format, set} from "date-fns";
+import {format} from "date-fns";
 import DelightBudgetList from '../components/Budget/DelightBudgetList';
 import GrowthBudgetList from '../components/Budget/GrowthBudgetList';
 import SavingsBudgetList from '../components/Budget/SavingsBudgetLIst';
