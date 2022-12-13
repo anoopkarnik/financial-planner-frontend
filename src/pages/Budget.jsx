@@ -40,7 +40,7 @@ const Budget = () => {
       getMonth(currentMonthId)
     }, []);
 
-const backend_url = 'localhost:3002';
+const backend_url = 'http://financial-planner.anoopkarnik.net:3002';
 
 const getMonth = async(id) =>{
   const res = await fetch(backend_url+'/month?id='+id)
