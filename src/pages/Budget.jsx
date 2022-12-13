@@ -36,7 +36,7 @@ const Budget = () => {
   const [savingsBudgets,setSavingsBudgets] = useState([]);
   const [accountTypes, setAccountTypes] = useState([]);
 
-  useEffect(() => {
+  useEffect((getMonth=getMonth) => {
       getMonth(currentMonthId)
     }, []);
 

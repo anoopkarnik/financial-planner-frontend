@@ -32,7 +32,7 @@ const Transactions = () => {
   const [accountTypes, setAccountTypes] = useState([]);
   const [allCategoryTypes, setAllCategoryTypes] = useState([]);
 
-  useEffect(() => {
+  useEffect((getMonth=getMonth) => {
       getMonth(currentMonthId);
     }, []);
 

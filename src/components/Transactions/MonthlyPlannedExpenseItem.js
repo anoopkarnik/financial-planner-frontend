@@ -2,7 +2,7 @@ import React from 'react';
 import { TiDelete } from 'react-icons/ti';
 import axios from 'axios';
 
-const MonthlyPlannedExpenseItem = ({id,name,cost,getMonth,currentMonthId,backend_url,sub_account_type,updateBalance={updateBalance}}) => {
+const MonthlyPlannedExpenseItem = ({id,name,cost,getMonth,currentMonthId,backend_url,sub_account_type,updateBalance}) => {
 	
 	const deleteExpense = async() =>{
 		await axios.delete(backend_url+`/monthlyExpense/${id}`)

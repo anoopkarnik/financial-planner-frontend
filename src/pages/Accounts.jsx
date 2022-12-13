@@ -13,7 +13,7 @@ const Accounts = () => {
   const [liquidityBalance, setLiquidityBalance] = useState(false);
   const [freeLiquidityBalance, setFreeLiquidityBalance] = useState(false);
 
-  useEffect(() => {
+  useEffect((refreshPage=refreshPage) => {
       refreshPage()
     }, []);
 
