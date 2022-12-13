@@ -36,11 +36,8 @@ const Budget = () => {
   const [savingsBudgets,setSavingsBudgets] = useState([]);
   const [accountTypes, setAccountTypes] = useState([]);
 
-  useEffect((getMonth=getMonth) => {
-      getMonth(currentMonthId)
-    }, []);
-
-const backend_url = 'http://financial-planner.anoopkarnik.net:3002';
+  useEffect(() => {
+    const backend_url = 'http://financial-planner.anoopkarnik.net:3002';
 
 const getMonth = async(id) =>{
   const res = await fetch(backend_url+'/month?id='+id)
@@ -180,6 +177,8 @@ const getSavingsBudgets = async() =>{
     await getLivingPlanBudget();
     await getSavingsPlanBudget();
   }
+      getMonth(currentMonthId)
+    }, []);
 
   return (
       <div>

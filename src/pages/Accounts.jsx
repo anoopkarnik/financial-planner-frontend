@@ -13,11 +13,8 @@ const Accounts = () => {
   const [liquidityBalance, setLiquidityBalance] = useState(false);
   const [freeLiquidityBalance, setFreeLiquidityBalance] = useState(false);
 
-  useEffect((refreshPage=refreshPage) => {
-      refreshPage()
-    }, []);
-
-const backend_url = 'http://financial-planner.anoopkarnik.net:3002';
+  useEffect(() => {
+    const backend_url = 'http://financial-planner.anoopkarnik.net:3002';
 
   const getAllBalances = async() =>{
     const res = await fetch(backend_url+'/getBalances')
@@ -42,14 +39,14 @@ const backend_url = 'http://financial-planner.anoopkarnik.net:3002';
     const data = await res.json()
     setFreeLiquidityBalance(data);
   }
-
-  const refreshPage= async() =>{
-    await getAllBalances();
-    await getTotalBalance();
-    await getLiquidityBalance();
-    await getFreeLiquidityBalance();
-  }
-
+    const refreshPage= async() =>{
+      await getAllBalances();
+      await getTotalBalance();
+      await getLiquidityBalance();
+      await getFreeLiquidityBalance();
+    }
+      refreshPage()
+    }, []);
 
 	return (
     <div>

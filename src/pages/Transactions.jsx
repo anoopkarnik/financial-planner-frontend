@@ -32,11 +32,8 @@ const Transactions = () => {
   const [accountTypes, setAccountTypes] = useState([]);
   const [allCategoryTypes, setAllCategoryTypes] = useState([]);
 
-  useEffect((getMonth=getMonth) => {
-      getMonth(currentMonthId);
-    }, []);
-
-const backend_url = 'http://financial-planner.anoopkarnik.net:3002';
+  useEffect(() => {
+    const backend_url = 'http://financial-planner.anoopkarnik.net:3002';
 
   const getTotalIncome = async(start_time,end_time) =>{
       const res = await fetch(backend_url+'/totalincome?start_time='+start_time+'&end_time='+end_time)
@@ -110,33 +107,33 @@ const getAccountTypes = async() =>{
     const data = await res.json()
     setAllCategoryTypes(data)
     }
+    const refreshPage = async(start_time,end_time,current_expense_type,current_account_type,current_category_type) => {
+      await getUnplannedExpenses(current_expense_type,current_account_type,current_category_type,start_time,end_time);
+      await getMonthlyPlannedExpenses(current_expense_type,current_account_type,current_category_type,start_time,end_time);
+      await getTotalUnplannedExpense(start_time,end_time);
+      await getTotalMonthlyPlannedExpense(start_time,end_time);
+      await getTotalIncome(start_time,end_time);
+      await getRemaining(start_time,end_time);
+      await getMonths();
+      await getExpenseTypes();
+      await getAccountTypes();
+      await getAllCategoryTypes();
+    }
 
-const getMonth = async(id,current_expense_type=currentExpenseTypes,current_account_type=currentAccountTypes,current_category_type=currentCategoryTypes) =>{
-  setCurrentExpenseTypes(current_expense_type)
-  setCurrentAccountTypes(current_account_type)
-  setCurrentCategoryTypes(current_category_type)
-  const res = await fetch(backend_url+'/month?id='+id)
-  const data = await res.json()
-  var start_date = new Date(data.start_time)
-  var end_date = new Date(data.end_time)
-  const start_time = format(start_date,"yyyy-MM-dd")
-  const end_time = format(end_date,"yyyy-MM-dd")
-  await refreshPage(start_time,end_time,current_expense_type,current_account_type,current_category_type)
-}
-
-
-const refreshPage = async(start_time,end_time,current_expense_type,current_account_type,current_category_type) => {
-  await getUnplannedExpenses(current_expense_type,current_account_type,current_category_type,start_time,end_time);
-  await getMonthlyPlannedExpenses(current_expense_type,current_account_type,current_category_type,start_time,end_time);
-  await getTotalUnplannedExpense(start_time,end_time);
-  await getTotalMonthlyPlannedExpense(start_time,end_time);
-  await getTotalIncome(start_time,end_time);
-  await getRemaining(start_time,end_time);
-  await getMonths();
-  await getExpenseTypes();
-  await getAccountTypes();
-  await getAllCategoryTypes();
-}
+    const getMonth = async(id,current_expense_type=currentExpenseTypes,current_account_type=currentAccountTypes,current_category_type=currentCategoryTypes) =>{
+      setCurrentExpenseTypes(current_expense_type)
+      setCurrentAccountTypes(current_account_type)
+      setCurrentCategoryTypes(current_category_type)
+      const res = await fetch(backend_url+'/month?id='+id)
+      const data = await res.json()
+      var start_date = new Date(data.start_time)
+      var end_date = new Date(data.end_time)
+      const start_time = format(start_date,"yyyy-MM-dd")
+      const end_time = format(end_date,"yyyy-MM-dd")
+      await refreshPage(start_time,end_time,current_expense_type,current_account_type,current_category_type)
+    }
+      getMonth(currentMonthId);
+    }, []);
 
 const createExpense = async(name,cost,expense_type,monthId,category_type,sub_category_type,account_type,sub_account_type) => {
   fetch(backend_url+'/expense', {
